@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+    <p>
+        <strong>
+        Hello !</strong> Let's see your emotion ! </p>
+
+<div class="md-form" style="display: inline-block;">
+  <i class="fas fa-pencil-alt prefix" ></i>
+  <textarea id="form10" class="md-textarea form-control"rows="4" cols="50"  placeholder="Enter your text here !..."></textarea>
+  <br>
+            <button> Start prediction</button>
+</div>
+
+
+<div class="voice_emotion" style="display: inline-block;margin-left: 110px;">
+      <p>Let's see your feeling by enter some text!...</p>
+    <br>
+    <canvas id="analyser" style="width:104%;height:68px;background-color: #0064ffc2;border-radius: 12px;"></canvas>
+       <p>
+            <button id="init" class="btn btn-info" onclick="unpause()">Start listening</button>
+            <button id="start" class="btn btn-success" onclick="startRecording()" disabled>Start</button>
+            <button id="stop" class="btn btn-danger" onclick="stopRecording()" disabled>Stop</button>
+        </p>
+</div>
+
+ <div class="face_emotion" style="display: inline-block;margin-left: 147px;" >
+       <p>Let's see your feeling by detecting your face!...</p>
+    <img src="{{ url_for('video') }}" style="width: 381px;height: 215px;" />
+     <br>
+     <button> Start prediction</button>
+    </div>
+
+    </body>
+<script src="{{ url_for('static', filename='recorder.js') }}"></script>
+    <script src="{{ url_for('static', filename='audiodisplay.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</html>
